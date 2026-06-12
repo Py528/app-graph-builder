@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #16161a;
+    color: #fafafa;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* ReactFlow overrides */
+.react-flow__background {
+  background-color: #121214 !important;
+}
+.react-flow__edge-path {
+  stroke: #4a4a55 !important;
+  stroke-width: 1.5px;
+}
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #10b981 !important;
+  stroke-width: 2px !important;
+}
+/* Arrow markers */
+.react-flow__edge.selected .react-flow__arrowhead path,
+.react-flow__edge:hover .react-flow__arrowhead path {
+  fill: #10b981 !important;
+}
+/* Edge handles and controls */
+.react-flow__controls {
+  border: 1px solid #22222d !important;
+  background: #131318 !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+.react-flow__controls-button {
+  background: #131318 !important;
+  border-color: #22222d !important;
+  color: #52526b !important;
+}
+.react-flow__controls-button:hover {
+  background: #24242e !important;
+  color: #ffffff !important;
+}
+.react-flow__minimap {
+  background: #0c0d12 !important;
+  border: 1px solid #22222d !important;
+  border-radius: 8px !important;
+}
+
+/* Custom slider thumb styles for a premium look */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.0);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+input[type="range"]::-moz-range-thumb:active {
+  transform: scale(1.0);
+}
+
+.react-flow__node > div {
+  border-color: var(--status-border, #22222d) !important;
+  box-shadow: 0 4px 24px -6px var(--status-glow, rgba(0, 0, 0, 0.5)) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.react-flow__node > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px -8px var(--status-glow-hover, rgba(0, 0, 0, 0.6)) !important;
+  border-color: var(--status-border-hover, #10b981) !important;
+}
+.react-flow__node.selected > div {
+  border-color: var(--status-border-active, #10b981) !important;
+  box-shadow: 0 0 0 1px var(--status-border-active, #10b981) !important;
+}
+
+/* Context menu animation */
+@keyframes context-menu-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.animate-context-menu {
+  animation: context-menu-fade-in 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Left Rail / TopBar subtle feedback */
+nav button,
+header button {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease;
+}
+nav button:hover,
+header button:hover {
+  transform: scale(1.04);
+}
+nav button:active,
+header button:active {
+  transform: scale(0.95);
+}
+
+/* New Polish Animations */
+
+/* Slider track fill transition */
+input[type="range"] {
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Right Panel Slide-in */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Canvas Node Entrance */
+@keyframes node-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-node-enter {
+  animation: node-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animated Edge Flow */
+@keyframes edge-flow {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.animated-edge .react-flow__edge-path {
+  stroke-dasharray: 6 6;
+  animation: edge-flow 1s linear infinite;
+  transition: stroke 0.3s ease-out, stroke-width 0.3s ease-out;
+}
