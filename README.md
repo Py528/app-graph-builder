@@ -5,7 +5,6 @@ A high-performance, premium interactive **App Graph Builder** dashboard built fo
 Recreates a custom node graph workspace with theme-reactive connection edges, dynamic state management, custom color-coded status badges, and interactive resource sliders.
 
 🎥 **Loom Video Walkthrough**: [Watch the Explanation Video](https://www.loom.com/share/58053d3f311c46be9d7fad850f4d8167)  
-*(Please replace `YOUR_LOOM_VIDEO_LINK_HERE` with your actual Loom recording URL before submitting)*
 
 🔗 **GitHub Repository**: [github.com/Py528/app-graph-builder](https://github.com/Py528/app-graph-builder)
 
